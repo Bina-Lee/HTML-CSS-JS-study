@@ -1,0 +1,60 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1 id="h1_1">여기라고요?</h1>
+        <h1 id="h1_2">여기일지도?</h1>
+        <h1 id="h1_3">과연그럴까?</h1>
+        <script>
+            // 1. 출력 명령어 -->> chrome - 개발자도구 - console
+            console.log("JavaScript 출력");
+            console.log('console 출력');
+            console.log(`text 출력`);
+            //아무튼 전부 똑같은 콘솔출력 방식임 "" '' ``
+            //backtick은 입력 그대로 출력(ex) 줄바꿈etc)
+
+            //2. typeof 자료형 이름
+            console.log(typeof("hello")); //->string
+            console.log(typeof(4)); //->number
+
+            console.log('text영역'+typeof(4)); //->연결
+            //'+' : string concatenation operator / string을 연결해서 붙이는 연산지
+
+            //'123'+5 에서 123+5가 하고싶다
+            console.log(parseInt('123')+5);
+            //parse 잘라내다
+
+            //변수선언 variable
+            //const : 한번 대입하면 변경불가
+            //let : 일반변수
+            const a=1;
+            let b=1;
+            b=2;
+
+            //연산자
+            //사칙연산 다 됨
+            //제곱은 **를 사용함
+            //ex) 2**3==8
+
+            const userMsg=prompt();
+            console.log(userMsg);
+            //입력창 띄우기
+
+            //document.querySelector('h1').textContent=userMsg;
+
+            //근데 h1가 여러개면 어떻게 함..? <= 바로 답이 나오네;;
+            //document.querySelector('h1#h1_2').textContent=userMsg;
+
+            const allh1=document.querySelectorAll('h1');
+            //h1이라는 태그를 가진 세개 다
+            allh1.forEach((elem, index)=>{elem.textContent=userMsg;});
+            //각각의 요소에 대해 전부 반복할 경우 어떤 일을 할건지
+
+            const userNumber=parseInt(userMsg);
+            const result=userNumber%2;
+            if(result==1)console.log('홀수');
+            else console.log('짝수');
+        </script>
+    </body>
+</html>

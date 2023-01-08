@@ -1,0 +1,16 @@
+div#first{
+    background-color: aqua;
+    display: inline-block;
+    width: 500px;
+}
+div#second{
+    background-color: beige;
+    display: inline-block;
+    width: 600px;
+}
+div#third{
+    background-color: burlywood;
+    display: inline-block;
+    width: 700px;
+
+}

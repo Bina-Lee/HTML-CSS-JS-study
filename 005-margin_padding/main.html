@@ -1,0 +1,28 @@
+<html>
+    <head>
+
+        <style>
+            div#outer{
+                display: inline-block;
+                background-color: blueviolet;
+                margin: 100px; /*바깥쪽과의 간격*/
+                border: 2px solid #f00;
+            }
+            div#inner{
+                display: inline-block;
+                background-color: aqua;
+                margin: 50px;
+                padding: 100px; /*자기자신 내부 공간 늘림*/
+            }
+            /*상하좌우 중 일부만 margin, padding 하는 방법은?*/
+        </style>
+
+    </head>
+    <body>
+        <div id="outer">
+            <div id="inner">
+                HELLO
+            </div>
+        </div>
+    </body>
+</html>
