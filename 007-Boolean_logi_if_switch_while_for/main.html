@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <h1 id="grade"></h1>
+        
+        <script>
+            // let k=true;
+            // console.log(k);         //true를 출력하는걸 볼 수 있음
+            // console.log(typeof(k))  //boolean을 출력함
+
+            //비교연산자
+            // < > <= >=
+            // == ===
+            // != !==
+
+            console.log(1==1); //true
+
+            // 문자열 안에서 ' '사용시 /' /' 사용
+
+            //string 1과 number 1은 자동으로 형변환해서 같은걸로 취급함 주의...
+            console.log('1'==1);    //true
+            console.log('1'===1);    //false
+                //===사용시 형변환을 사용하지 않음
+                //!= !== 동일
+            
+            console.log('abc'<'abd') //true
+                //사전순으로 값을 반환함
+                //strcmp같은 느낌
+            
+            //////////////////////////////////
+
+            let k;  //<- k == undefined / 초기화 안함
+            let x=null; //초기화 했지만 null
+
+            ///////////////////////////////////
+
+            //if
+            const score = parseInt(prompt());
+            if(score>=90)document.querySelector('h1#grade').textContent='A';
+            else if(score>=80)document.querySelector('h1#grade').textContent='B';
+            else document.querySelector('h1#grade').textContent='C';
+
+            ////////////////////////////////////
+            
+            //switch
+            switch(score){
+                case 100:   document.querySelector('h1#grade').textContent='A'; break;
+                case 90:    document.querySelector('h1#grade').textContent='B'; break;
+                case 80:    document.querySelector('h1#grade').textContent='C'; break;
+                default:    document.querySelector('h1#grade').textContent='몰?류'; break;
+            }
+
+            ////////////////////////////////////
+
+            //삼항연산자
+            const mst=(scord>=50)?'pass':'fail';
+            document.querySelector('h1#grade').textContent=msg;
+
+            ////////////////////////////////////
+
+            //for
+            const num=parseInt(prompt());
+            let msg=' ';
+            for(let i=0;i<num;i++)msg+='hello ';
+            document.querySelector('h1#grade').textContent=msg;
+
+            ///////////////////////////////////
+
+            //while
+            i=0;
+            msg=' ';
+            while(i<num){
+                msg+='hello ';
+                i++;
+            }
+            document.querySelector('h1#grade').textContent=msg;
+
+            //for while break continue 모두 문법 똑같음
+
+            /////////////////////////////////
+
+            //Array
+            const Array1=[1,2,3,4,5];
+            const Array2=['a',2,'apple',true];
+            //자료형 상관없음
+            console.log(Array1.length); //배열 요소수 반환
+            const Array3=['alpha',1,[1,2,3,4,'a','b','c']];
+            console.log(Array3.lenght);
+            for(i=0;i<Array1.lenght;i++)console.log(Array1[i]);
+            for(i=0;i<Array3[2].length;i++)console.log(Array3[2][i]);
+
+            ///////////////////////////////
+
+            //배열요소 수정
+
+            //pop : 끝 요소 잘라냄
+            //대입연산자 쓰면 이동 가능
+            const Value1=Array1.pop();
+            //-->> Value1==5, Array1==[1,2,3,4]
+
+            //shift : 앞 요소 잘라냄
+            const Value2=Array2.shift();
+            //-->> Value2==1, Array1==[2,3,4]
+
+            //push : 뒤에 요소 추가
+            Array2.push('Orange');
+            //unshift : 앞에 요소 추가
+        </script>
+    </body>
+</html>
