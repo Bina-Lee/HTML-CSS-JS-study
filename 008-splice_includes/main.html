@@ -1,0 +1,92 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <h1 id="grade"></h1>
+
+        <script>
+
+            const sample_array=[1,2,3,'string','apple', 3.14,'string', true];
+
+            //중간요소 삭제
+            //splice
+            sample_array.splice(3,2);//3번 인덱스부터 2개 요소 삭제
+            sample_array.splice(4);//4번 인덱스부터 뒤의 모든 요소 삭제
+                    //함수 입력인자가 한개면 그 인덱스 뒤로 다 삭제
+            sample_array.splice(1,1,'orange');
+                    //인덱스가 3개
+                    //1번인덱스부터 1개 지우고 그 자리에 'orange' 추가
+            sample_array.splice(2,0,'add_index');
+                    //지우는 인덱스가 없으니
+                    //그 자리에 추가만 한 셈
+            sample_array.splice(3,0,'add_index_1','add_index_2');
+                    //2개이상 추가 시 그냥 뒤에 쭉 쓰면 됨
+
+            //->응용인가(?)
+            sample_array.splice(0,0,'same_unshift');
+            sample_array.unshift('same_unshift');
+                   //둘이 실질적으로 동일한 코드임
+
+            sample_array.splice(sample_array.length,0,'same_push');
+            sample_array.push('same_push');
+                    //이것도 내나 둘다 젤 끝에 추가하는걸로 역할 똑같음
+
+            ////////////////////////////////////////////////////////
+
+            /*
+            sample_array.includes('apple');
+                    //배열 요소에 있으면 true, 없으면 false 반환
+
+            if(sample_array.includes('apple'))console.log('있');
+            else console.log('없');
+            */
+
+            ////////////////////
+
+            sample_array.indexOf('apple');
+                    //요소가 위치한 인덱스를 반환
+                    //없으면 -1 반환
+            sample_array.indexOf('apple', 2);
+                    //요소를 2번 인덱스부터 탐색
+                    //물론 기존 인덱스 번호 순서 그대로 사용함
+                    //2번인덱스를 0으로 반환하지 않는다는 말이고
+                    //2번인덱스는 여전히 2번인덱스일 뿐
+            
+            sample_array.lastIndexOf('string');
+                    //여러개 'string'중 마지막 'string'의 인덱스 반환
+            sample_array.lastIndexOf('string',5);
+                    //5번 인덱스 부터 0번 인덱스 방향으로 탐색
+                    //!!반대방향 주의!!
+                    //인덱스 숫자는 그대로 반환
+
+            //그런데 그러면 includes로 탐색할 때 여러개면 배열로 반환하나?
+
+            //////////////////////////////////////////////////////
+
+            //test_1
+            //배열의 모든 'string'을 제거
+
+            while(sample_array.lastIndexOf('string')!=-1){
+                sample_array.splice(sample_array.lastIndexOf('string'),1);
+            }
+            console.log(sample_array);
+
+            //test_2
+            //배열에 포함된 'string'은 몇개인가?
+
+            let count=0;
+            let check_index=0;
+            while(true){
+                check_index=sample_array.indexOf('string',check_index);
+                if(check_index<0)break;
+                count++;
+                check_index++;
+            }
+            console.log(count);
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <h1 id="grade"></h1>
+
+        <script>
+
+            //1
+            function sayHello(){
+                console.log('Hello');
+            }
+            sayHello();
+
+            //function parameter    -->함수 선언
+            //function argument     -->함수 호출
+
+            function sayHello_with_parameter(name){
+                console.log(name+', hello');
+            }
+            sayHello_with_parameter(hey);
+
+            //2arrow function
+            const fu=()=>{console.log('whatisthis;;;;;;;');}
+            fu();
+
+            const fu2=(name)=>{console.log(name+', hello');}
+            fu2(hey);
+
+            //3
+            const oh=function() {console.log('이게뭔지....');}
+            oh();
+
+            const oh2=function(name) {console.log(name+'이게뭔지....');}
+            oh2(hey);
+
+            ///////////////////////////////////////////
+
+            //function에서 return 안하면 undefined를 반환함
+
+            //c와 동일하게 return으로 return가능
+
+            //return [data1, data2]와 같이 인자 여러개 배열 형태로 return 가능
+
+            //->질문
+                //함수 호출할 때 function()[]로 값 하나만 호출 가능?
+
+            //parameter와 argument 갯수가 맞지 않으면 알아서 잘라서 처리함
+                //parameter가 많으면 undefined로 받음
+                //argument가 많으면 알아서 순서대로 잘라씀
+
+            ///////////////////////////////////////////////////////////
+
+            //Literal -->>값 자체
+            //integer literal
+            //floating point number literal
+            //string literal
+            //!! object literal !! //--객체
+
+            const person ={
+                name:'sample_name',
+                age:  20
+            };
+            console.log(person.name);
+            console.log(person['name']);
+
+            Object.keys(person);
+            //키들을 배열 형태로 반환함(name,age)
+            Object.values(person);
+            //값들을 배열 형태로 반환(sample_name,20)
+
+            const showOL=(OL)=>{
+                const keys=Object.keys(OL);
+                keys.forEach((elem,idx)=>{
+                    console.log(elem+OL[elem]);
+                });
+            };
+            //forEach로 element와 값 추출
+            showOL(person);
+
+            ////////////////////////////////
+
+            //function을 literal에 넣으면 method라고 함
+            person.hello=()=>{console.log('hello');};
+            person.hello();
+
+            
+
+        </script>
+
+    </body>
+</html>
