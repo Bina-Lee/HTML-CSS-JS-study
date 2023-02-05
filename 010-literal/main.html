@@ -25,6 +25,7 @@
             const cmp=(x1,x2)=>{
                 let x1key=Object.keys(x1);
                 let x2key=Object.keys(x2);
+                let finish=false;
 
                 if(x1key.length!==x2key.length)return false;
 
@@ -32,10 +33,14 @@
                 x2key=x2key.sort();
 
                 x1key.forEach((elem,idx)=>{
-                    x1key[idx]
+                    if(x1key[idx]!==x2key[idx])finish=true;
+                    if(x1[x1key[idx]]!==x2[x2key[idx]])finish=true;
+                    return !finish;
                 });
 
             };
+
+            console.log(cmp(a,c));
 
         </script>
 

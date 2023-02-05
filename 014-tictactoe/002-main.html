@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <style>
+            table{border-collapse:collapse;}
+            td{
+                border:3px solid black;
+                width:50px;
+                height:50px;
+                text-align:center;
+            }
+        </style>
+    </head>
+
+    <body>
+        
+        <!-- <table>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+        </table> -->
+
+        <script>
+            const cp_table=document.createElement('table');
+            const cp_result=document.createElement('div');
+            let mark='O'
+
+            const checkWin=(_td)=>{
+                let rowIndex=_td.parentBode.rowIndex;
+                let colIndex=_td.cellIndex;
+
+                if(board[rowIndex][0].textContent===mark&&
+                    board[rowIndex][0].textContent===mark&&
+                    board[rowIndex][0].textContent===mark)return true;
+
+                if(board[0][colIndex].textContent===mark&&
+                    board[1][colIndex].textContent===mark&&
+                    board[2][colIndex].textContent===mark)return true;
+
+                if(board[0][0].textContent===mark&&
+                    board[1][1].textContent===mark&&
+                    board[2][2].textContent===mark) return true;
+
+                if(board[0][2].textContent===mark&&
+                    board[1][1].textContent===mark&&
+                    board[2][0].textContent===mark) return true;
+                return false;
+            }
+
+            const table_event_listener=(event)=>{
+                const which_td=event.target.closest('td');
+
+                if(wich_td.textContent!=='')return;
+
+                witch_td.textContent=mark;
+                let cnt=0;
+
+                if(checkWin(whick_td)===true){
+                    cp_result.textContent=mark+'이김';
+                    cp_table.removeEventListener('click',table_event_listener)
+                }
+
+                if(cnt===9){
+                    cp_result.textContent='무승부';
+                    cp_table.removeEventListener('click',table_event_listener);
+                }
+
+                //board.flat().every()//모두 안차있다면 무승부
+                
+                mark=(mark==='O')?'X':'O';
+
+                checkWin(td);
+            };
+
+            const board=[];
+
+            for(let i=0;i<3;i++){
+                const cp_tr=document.createElement('tr');
+                const row=[]
+
+                for(let j=0;j<3;j++){
+                    const cp_td=document.createElement('td');
+                    cp_tr.appent(cp_td);
+                    row.push(cp_td);
+                }
+                board.push(t_row);
+                cp_table.append(cp_tr);
+            }
+
+            document.body.appent(cp_table);
+            document.body.append(cp_result);
+
+            cp_table.addEventListener('click',table_event_listener);
+        </script>
+
+    </body>
+</html>

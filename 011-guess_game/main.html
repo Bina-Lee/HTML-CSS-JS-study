@@ -1,0 +1,58 @@
+<html>
+
+    <head>
+
+    </head>
+
+    <body>
+        
+        <h1>숫자를 입력</h1>
+        <div>
+            <input id='input_num' type="text">
+            <button id="submit_btn">제출</button>
+            <button id="change_color">색변환</button>
+        </div>
+        <h1 id="result"></h1>
+        <script>
+            const submit_button=document.querySelector('#submit_btn');
+            const color_change_button=document.querySelector('#change_color');
+            const text_input=doucment.querySelector('#input_num');
+            const result_h1=document.querySelector('#result');
+            
+            submit_button.addEventListner('click',()=>{
+                console.log('clicked');
+                const temp=parseInt(text_input.value);
+                //result_h1.textContent=temp;
+                if(!temp){
+                    result_h1.textContent='숫자쓰라고';
+                }
+                else{
+                    let decision='홀';
+                    if(temp%2==0)decision='짝';
+
+                    result_h1.textContent=decision;
+                }
+
+                /////////////////
+
+                text_input.text='';
+
+                text_input.focus();//커서 다시 위치
+            });
+
+            ///////////////////////////////////////
+
+            const clr_array=['red','green','blue'];
+            let clr_idx=0;
+
+            color_change_button.addEventListener('click',()=>{
+                clr_idx=(clr_idx+1)%clr_array.length;
+                console.log(clr_idx);
+                result_h1.style.color=clr_array[clr_idx];
+            });
+
+        </script>
+
+    </body>
+
+</html>

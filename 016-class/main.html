@@ -1,0 +1,58 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        
+        <script>
+            'use strict'
+
+            class Person{
+                consstructor(_name,_age){
+                    this.name=_name;
+                    this.age=_age;
+                }
+
+                show_info(){
+                    console.log(this.name+this.age);
+                }
+
+                is_order_than(value){
+                    if(this.age>age)return true;
+                    else return false;
+                }
+
+                add_city_info(_city){
+                    this.city=_city;
+                }
+            }
+
+            class Student extends Person{
+                //상속
+                //Person을 확장해서 만듬
+
+                constructor(_name,_age_dream){
+                    super(_name,_age);
+                    this.dream=_dream;
+                }
+
+                show_info(){
+                    super.show_info();
+                    console.log(`dream is %{this.dream}`);
+                }
+            }
+
+            const s=new Student('tom',19,'pilot');
+            s.add_city_info('incheon');
+            s.show_info();
+
+            const p= new Person('jim',20);
+            const q= new Person('jane',21);
+
+            p.show_info();
+
+        </script>
+
+    </body>
+</html>

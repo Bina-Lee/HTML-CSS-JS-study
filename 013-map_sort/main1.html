@@ -1,0 +1,59 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        
+        <script>
+            //배열
+            const a=Array(10);
+            
+            a.fill(0);
+            a.fill(10);
+
+            const b=a.map((_elem,_idx)=>{return _idx+1;});
+            //1~10
+
+            const c=[45,33,22,11,7,99];
+
+            c.sort((a,b)=>{
+                if(a<b)return -1;
+                else if(a>b)return 1;
+                else return 0;
+            });
+            //1이면 자리 바꿈 //positive
+            //-1이면 자리 안바꿈 //negative
+            //0은 안바꾸는듯? //zero
+            console.log(c);
+            //입력배열에 바로 수정함
+
+            const d=c.slice.sort((a,b)=>{
+                if(a<b)return -1;
+                else if(a>b)return 1;
+                else return 0;
+            });
+            //복사본 만들기
+
+            const e=c.slice().sort((a,b)=>{a-b});
+
+            const f=['banana','apple',orange];
+
+            const g=d.slice().sort((a,b)=>{
+                if(a<b)return 1;
+                else if(a>b)return -1;
+                else return 0;
+            });
+
+            const h=d.slice().sort((a,b)=>{ (a > b) ? 1 : ((a<b)?-1:0); });
+
+            const i=d.slice().sort((a,b)=>a.localeCompare(b))
+
+            //localeCompare
+            //대소문자 구분안함
+            //외국어 섞일 경우 브라우저 설정언어 우선(?)
+            
+        </script>
+
+    </body>
+</html>

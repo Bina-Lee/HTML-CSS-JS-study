@@ -1,0 +1,47 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        
+        <body>
+            
+            <h1 id="count_down"></h1>
+
+        </body>
+
+        <script>
+
+            //setTimeout : 일정시간 이후 실행
+
+            const hello=()=>{console.log('hello');};
+
+            setTimeout(hello,3000);
+
+            setTimeout(()=>{console.log('hello',3000);});
+
+            //setInterval : 일정 주기로 실행
+
+            //clearInterval : 주기함수 종료
+
+            // const _id=setInterval(hello,3000);
+
+            // setTimeout(()=>{clearInterval(_id)},10000);
+
+            ////////////////////////////////////
+
+            let timer=10;
+            const _id=setInterval(()=>{
+                const cp_he=document.querySelector('#count_down');
+                cp_he.textContent=timer;
+                if(timer<0){
+                    clearInterval(_id);
+                    cp_h1.textContent='Done';
+                }
+            },1000)
+
+        </script>
+
+    </body>
+</html>
